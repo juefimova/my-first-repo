@@ -37,12 +37,9 @@ export default defineConfig({
   projects: [
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'],
-      slowMo: 6000,
-      },
     },
 
-    // {
+    //{
     //   name: 'firefox',
     //   use: { ...devices['Desktop Firefox'] },
     // },
