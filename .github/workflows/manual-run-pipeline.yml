@@ -22,10 +22,15 @@ jobs:
           run: npx playwright install --with-deps
 
         - name: Run UI tests
-          run: npm run tests:ui -- --reporter=html --output=playwright-report-ui
+          run: npm run tests:ui
+          # чтобы создавалась папка с отчетом
+          env:
+            PLAYWRIGHT_HTML_REPORT: playwright-report-ui
 
         - name: Run API tests
-          run: npm run tests:api -- --reporter=html --output=playwright-report-api
+          run: npm run tests:api
+          env:
+            PLAYWRIGHT_HTML_REPORT: playwright-report-api
 
 
         - name: Upload UI test report
