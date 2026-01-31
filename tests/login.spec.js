@@ -5,7 +5,7 @@ const { test, expect } = require('@playwright/test');
 test.describe('Авторизация на Sauce Demo', () => {
 
     // Создаем тест-кейс
-    test('Пользователь должен успешно войти в систему', async ({ page }) => {
+    test('Пользователь должен успешно войти в систему @ui', async ({ page }) => {
         // 1. Переходим на страницу
         await page.goto('https://www.saucedemo.com/');
 
@@ -27,7 +27,7 @@ test.describe('Авторизация на Sauce Demo', () => {
 });
 
 test.describe('Неуспешный вход на Sauce Demo', () => {
-    test('Сообщение с ошибкой должно быть видно', async ({ page }) => {
+    test('Сообщение с ошибкой должно быть видно @ui', async ({ page }) => {
         await page.goto("https://www.saucedemo.com/");
         await page.locator('#user-name').fill('locked_out_user');
         await page.locator('[placeholder="Password"]').fill('secret_sauce');

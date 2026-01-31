@@ -7,7 +7,7 @@ test.describe('API-тесты для Restful-booker', () => {
     let token;
 
     // POST - create
-    test('Создание бронирования', async ({request}) => {
+    test('Создание бронирования @api', async ({request}) => {
         const postData = {
             firstname: 'Maria',
             lastname: 'White',
@@ -36,7 +36,7 @@ test.describe('API-тесты для Restful-booker', () => {
 
 
     // GET - read
-    test('Получение списка ID бронирований', async ({request}) => {
+    test('Получение списка ID бронирований @api', async ({request}) => {
         const response = await request.get(`${baseURL}/booking`);
 
         console.log(`Статус-код: ${response.status()}`);
@@ -50,7 +50,7 @@ test.describe('API-тесты для Restful-booker', () => {
     });
 
     // PUT - update
-    test('Обновление бронирования', async ({request}) => {
+    test('Обновление бронирования @api', async ({request}) => {
         const postData = {
             username: 'admin',
             password: 'password123'
@@ -92,7 +92,7 @@ test.describe('API-тесты для Restful-booker', () => {
 
 
     // DELETE - delete
-    test('Удаление бронирования', async ({request}) => {
+    test('Удаление бронирования @api', async ({request}) => {
         const response = await request.delete(`${baseURL}/booking/${bookingId}`,
             {
                 headers: {
